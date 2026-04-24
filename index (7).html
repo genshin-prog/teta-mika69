@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>С Днём Рождения, Алексе!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Unbounded:wght@400;700;900&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- Конфетти канвас -->
+<canvas id="confetti-canvas"></canvas>
+
+<!-- Главный экран -->
+<section id="main-screen">
+  <div class="stars"></div>
+  <div class="main-content">
+    <div class="skull-icon">💀</div>
+    <h1 class="main-title">
+      <span class="line1">ПОЗДРАВЛЯЮ</span>
+      <span class="line2">С ДНЁМ РОЖДЕНИЯ</span>
+      <span class="line3">ты на один день ближе к смерти 🎂</span>
+    </h1>
+    <div class="buttons-grid">
+      <button class="big-btn btn-teto" onclick="openSection('teto')">
+        <span class="btn-icon">🎀</span>
+        <span class="btn-text">Поздравление<br/>от Тето</span>
+        <span class="btn-sub">нажми меня~</span>
+      </button>
+      <button class="big-btn btn-black" onclick="openSection('mell')">
+        <span class="btn-icon">⚡</span>
+        <span class="btn-text">ПОЗДРАВЛЕНИЕ</span>
+        <span class="btn-sub">ты не готов</span>
+      </button>
+      <button class="big-btn btn-genshin" onclick="openSection('genshin')">
+        <span class="btn-icon">✨</span>
+        <span class="btn-text">Поздравление<br/>от...</span>
+        <span class="btn-sub">интригующе...</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== СЕКЦИЯ ТЕТО ===== -->
+<section id="section-teto" class="hidden">
+  <div class="teto-bg">
+    <button class="back-btn" onclick="closeSection('teto')">← Назад</button>
+    <div class="teto-wrapper">
+      <div class="teto-img-box">
+        <img src="https://vsthemes.org/uploads/posts/2025-10/58df27c4a2_snimok-jekrana-426.webp"
+             alt="Тето Касане" class="teto-img" onerror="this.src='https://i.imgur.com/Teto.png'"/>
+        <div class="teto-name-tag">Тето Касане 🎀</div>
+      </div>
+      <div class="teto-wishes">
+        <div class="wish-card wish-1">
+          <span class="wish-emoji">🎂</span>
+          <p>Алексе! Привет, это я — Тето Касане! Я специально прилетела на твой день рождения, чтобы поздравить тебя лично!</p>
+        </div>
+        <div class="wish-card wish-2">
+          <span class="wish-emoji">🌸</span>
+          <p>Желаю тебе быть таким же ярким, как мои розовые хвостики — неотразимым, заметным и всегда на волне!</p>
+        </div>
+        <div class="wish-card wish-3">
+          <span class="wish-emoji">🎵</span>
+          <p>Пусть жизнь звучит как идеальный трек — ни одного фальшивого нотика и только хиты!</p>
+        </div>
+        <div class="wish-card wish-4">
+          <span class="wish-emoji">💕</span>
+          <p>Пусть каждый день будет наполнен смехом, друзьями и нереальным количеством вкусняшек!</p>
+        </div>
+        <div class="wish-card wish-5">
+          <span class="wish-emoji">⭐</span>
+          <p>Ты заслуживаешь всего лучшего на свете, Алексе! Расцветай, сияй и не давай никому гасить твой огонь!</p>
+        </div>
+        <div class="wish-card wish-6">
+          <span class="wish-emoji">🎉</span>
+          <p>С Днём Рождения, мой дорогой Алексе! Удачи, здоровья, и пусть все твои желания сбываются быстрее, чем ты успеваешь их загадать! 💗</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== СЕКЦИЯ МЕЛСТРОЙ ===== -->
+<section id="section-mell" class="hidden">
+  <div class="mell-bg">
+    <button class="back-btn back-white" onclick="closeSection('mell')">← Назад</button>
+    <!-- Шаг 1: Картинка -->
+    <div id="mell-step1">
+      <div class="mell-img-container">
+        <img src="https://cazinostream.ru/wp-content/uploads/2021/05/mellstroy1.jpg"
+             alt="Mellstroy" class="mell-img"/>
+        <div class="mell-flash-text">ПОЗДРАВЛЯЮ!</div>
+        <div class="mell-prize-text">ТЫ ВЫИГРАЛ<br/><span class="prize-highlight">ЛАМБА УРУС</span><br/>И<br/><span class="prize-highlight">БАБУ ЧАЙ</span> ☕</div>
+        <button class="claim-btn" onclick="mellStep2()">ПОЛУЧИТЬ ПРИЗ 🏆</button>
+      </div>
+    </div>
+    <!-- Шаг 2: Пожелания -->
+    <div id="mell-step2" class="hidden">
+      <div class="mell-wishes-screen">
+        <h2 class="mell-wishes-title">🎊 А ТЕПЕРЬ СЕРЬЁЗНО 🎊</h2>
+        <div class="mell-wish-list">
+          <div class="mell-wish">💪 Алексе, ты настоящий зверь! Пусть каждый день приносит тебе победы!</div>
+          <div class="mell-wish">🚀 Лети высоко, мечтай грандиозно, достигай невозможного!</div>
+          <div class="mell-wish">💰 Пусть деньги сами тебя находят, а не ты их!</div>
+          <div class="mell-wish">🎮 Побеждай в играх, в жизни и во всём остальном!</div>
+          <div class="mell-wish">🔥 Ты горишь — и пусть этот огонь никогда не гаснет!</div>
+          <div class="mell-wish">👑 Ты — король своей жизни. С Днём Рождения, легенда!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== СЕКЦИЯ ГEНШИН / ЭПШТЕЙН ===== -->
+<section id="section-genshin" class="hidden">
+  <div class="genshin-bg">
+    <button class="back-btn" onclick="closeSection('genshin')">← Назад</button>
+    <div class="dual-panel">
+      <!-- Левая панель -->
+      <div class="panel panel-left">
+        <div class="panel-img-wrap">
+          <img src="https://cdn.forbes.ru/files/story_images/gettyimages-591529968.jpg__1563198568__98999.jpg"
+               alt="Left" class="panel-img"/>
+          <div class="panel-overlay-text left-text">расти большой,<br/>не будь лапшой! 🍜</div>
+        </div>
+        <div class="left-wishes">
+          <div class="lw">🌟 Алексе, будь умным, сильным и никогда не теряй себя!</div>
+          <div class="lw">🎯 Ставь цели — и достигай их без лишних оправданий!</div>
+          <div class="lw">🦁 Характер как у льва, мудрость как у совы!</div>
+        </div>
+      </div>
+      <!-- Правая панель -->
+      <div class="panel panel-right">
+        <div class="panel-img-wrap">
+          <img src="https://newcdn.igromania.ru/articles/pics/tmp/images/2025/9/9/cebbc92d-6fff-4e11-91dd-f73698276c4d.jpg"
+               alt="Furina Genshin" class="panel-img"/>
+          <div class="panel-overlay-text right-text">🎁 Твой подарок:</div>
+        </div>
+        <div class="right-wishes">
+          <div class="rw primo-counter">
+            <span class="primo-num" id="primo-count">0</span>
+            <span class="primo-label">Примогемов 💎</span>
+          </div>
+          <div class="rw">🌙 Пусть гача всегда будет на твоей стороне!</div>
+          <div class="rw">⚡ 5★ каждый раз на первом баннере!</div>
+          <div class="prank-btn-wrap">
+            <button class="prank-btn" onclick="prankClick()">
+              👀 смотреть порно фурины со слаймом
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Пранк уведомление -->
+<div id="prank-toast" class="prank-toast hidden">
+  😂 ПРАНК! Такого не существует... или существует? 👀
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
